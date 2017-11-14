@@ -6,6 +6,12 @@ label {
     font-size: 1.5em;
 }
 
+.checkbox label {
+    font-size: 1.0em;
+    padding: 0 15px;
+    float: left;
+}
+
 .movie-inputs span.glyphicon-star-empty, .movie-inputs span.glyphicon-star {
     font-size: 3.0em;
 }
@@ -14,4 +20,24 @@ label {
     margin-top: 20px;
 }
 
+.movie-badges {
+    float: left;
+}
+
+#addMoviesBtn {
+    width: 90%;
+    margin: 0 auto;
+}
+
+.modal-body {
+    height: 500px;
+}
+
+.label-info {
+    margin-right: 3px;
+}
+
+.movie-badge-genre {
+    margin-top: 10px;
+}
 

@@ -11,32 +11,53 @@
     <hr>
     <div class="container">
         <div class="row">
-            <div class="col-md-5 col-md-offset-1">
+            <div class="col-md-10 col-md-offset-1">
                 <h2 class="text-center">Movie List</h2>
                 <hr>
-                <div id="movies-insert" class="text-center"></div>
-            </div>
-            <div class="col-md-5">
-                <h2 class="text-center">Movie Details Form</h2>
-                <hr>
-                <div class="movie-inputs">
-                    <label>Movie Title: </label>
-                    <input type="text" id="movie-title-input" class="form-control" id="basic-url" aria-describedby="basic-addon3">
+                <!-- Button trigger modal -->
+                <div class="text-center">
+                    <button type="button" id="addMoviesBtn" class="btn-block btn btn-success btn-lg" data-toggle="modal" data-target="#movieFormModal">
+                        Add A New Movie
+                    </button>
                 </div>
-                <div class="movie-inputs">
-                    <label>Movie Rating: </label>
-                    <div id="rating-area" class="text-center">
-                        <span class="star glyphicon glyphicon-star-empty" aria-hidden="true"></span>
-                        <span class="star glyphicon glyphicon-star-empty" aria-hidden="true"></span>
-                        <span class="star glyphicon glyphicon-star-empty" aria-hidden="true"></span>
-                        <span class="star glyphicon glyphicon-star-empty" aria-hidden="true"></span>
-                        <span class="star glyphicon glyphicon-star-empty" aria-hidden="true"></span>
+                <br>
+                <!-- Modal -->
+                <div class="modal fade" id="movieFormModal" tabindex="-1" role="dialog" aria-labelledby="movieModalLabel">
+                    <div class="modal-admin modal-dialog" role="document">
+                        <div class="modal-content">
+                            <div class="modal-header">
+                                <h2 class="modal-title text-center" id="movieModalLabel">Movie Details Form</h2>
+                            </div>
+                            <div class="modal-body">
+                                <div class="movie-inputs">
+                                    <label>Movie Title: </label>
+                                    <input type="text" id="movie-title-input" class="form-control" id="basic-url" aria-describedby="basic-addon3">
+                                </div>
+                                <div class="movie-inputs">
+                                    <label>Movie Rating: </label>
+                                    <div id="rating-area" class="text-center">
+                                        <span class="star glyphicon glyphicon-star-empty" aria-hidden="true"></span>
+                                        <span class="star glyphicon glyphicon-star-empty" aria-hidden="true"></span>
+                                        <span class="star glyphicon glyphicon-star-empty" aria-hidden="true"></span>
+                                        <span class="star glyphicon glyphicon-star-empty" aria-hidden="true"></span>
+                                        <span class="star glyphicon glyphicon-star-empty" aria-hidden="true"></span>
+                                    </div>
+                                </div>
+                                <div class="movie-inputs">
+                                    <label>Genres: </label>
+                                    <div>
+                                        <div class="checkbox"></div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="modal-footer">
+                                <button id="movies-form-submit-btn" class="btn btn-primary btn-block">Submit</button>
+                                <button id="movies-form-cancel-btn" class="btn btn-default btn-block">Cancel</button>
+                            </div>
+                        </div>
                     </div>
                 </div>
-                <div class="movie-inputs">
-                    <button id="movies-form-submit-btn" class="btn btn-primary btn-block">Submit</button>
-                    <button id="movies-form-cancel-btn" class="btn btn-default btn-block">Cancel</button>
-                </div>
+                <div id="movies-insert" class="text-center"></div>
             </div>
         </div>
     </div>
