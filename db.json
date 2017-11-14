@@ -1,29 +1,24 @@
 {
   "movies": [
     {
-      "title": "Casablanca",
-      "rating": "4",
-      "id": 1
-    },
-    {
-      "title": "Star Wars: A New Hope",
-      "rating": "5",
-      "id": 2
-    },
-    {
-      "title": "Friday The 13th",
-      "rating": 1,
-      "id": 3
-    },
-    {
       "title": "Harry Potter",
-      "rating": 4,
+      "rating": 1,
       "id": 4
     },
     {
-      "title": "Harry Potter 2",
-      "rating": 5,
+      "title": "Superbad",
+      "rating": 4,
       "id": 5
+    },
+    {
+      "title": "2 Fast 2 Furious",
+      "rating": 3,
+      "id": 6
+    },
+    {
+      "title": "Pineapple Express",
+      "rating": 2,
+      "id": 7
     }
   ]
 }
