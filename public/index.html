@@ -4,14 +4,45 @@
     <meta charset="UTF-8" />
     <title>My Application</title>
     <link rel="stylesheet" href="/style.css" />
+    <link href="css/bootstrap.min.css" rel="stylesheet">
 </head>
 <body>
-
+    <h1 id="main-title" class="text-center">Movies Application Project</h1>
+    <hr>
     <div class="container">
-        <h1>Hello There!</h1>
-        <p>To get started, edit <code>src/index.js</code>.</p>
+        <div class="row">
+            <div class="col-md-5 col-md-offset-1">
+                <h2 class="text-center">Movie List</h2>
+                <hr>
+                <div id="movies-insert" class="text-center"></div>
+            </div>
+            <div class="col-md-5">
+                <h2 class="text-center">Movie Details Form</h2>
+                <hr>
+                <div class="movie-inputs">
+                    <label>Movie Title: </label>
+                    <input type="text" id="movie-title-input" class="form-control" id="basic-url" aria-describedby="basic-addon3">
+                </div>
+                <div class="movie-inputs">
+                    <label>Movie Rating: </label>
+                    <div id="rating-area" class="text-center">
+                        <span class="star glyphicon glyphicon-star-empty" aria-hidden="true"></span>
+                        <span class="star glyphicon glyphicon-star-empty" aria-hidden="true"></span>
+                        <span class="star glyphicon glyphicon-star-empty" aria-hidden="true"></span>
+                        <span class="star glyphicon glyphicon-star-empty" aria-hidden="true"></span>
+                        <span class="star glyphicon glyphicon-star-empty" aria-hidden="true"></span>
+                    </div>
+                </div>
+                <div class="movie-inputs">
+                    <button id="movies-form-submit-btn" class="btn btn-primary btn-block">Submit</button>
+                    <button id="movies-form-cancel-btn" class="btn btn-default btn-block">Cancel</button>
+                </div>
+            </div>
+        </div>
     </div>
 
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+    <script src="js/bootstrap.min.js"></script>
     <script src="/main.js"></script>
 </body>
 </html>
