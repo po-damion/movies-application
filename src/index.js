@@ -55,7 +55,7 @@ const fetchMovies = () => {
             $('#movies-insert').removeClass('text-center').addClass('text-left');
             datas.forEach(data => {
                 let moviesStr = "";
-                moviesStr += `<div class="movie-badges col-md-6">`;
+                moviesStr += `<div class="movie-badges col-sm-6 col-xs-12">`;
                 moviesStr += `<div class="panel panel-primary">`;
                 moviesStr += `<div class="panel-heading">`;
                 moviesStr += `<h3 id="movie-title-${data.id}" class="panel-title">${data.title}</h3>`;
@@ -139,8 +139,59 @@ getMovies().then((movies) => {
 });
 
 window.onload = () => {
-    $('#movies-insert').html('Loading...');
-    //console.log('loading...');
+    $('#movies-insert').html(
+        '<div id="loading-icon">'+
+        '<div id="loading-icon-out"></div>'+
+        '<div id="loading-icon-mid"></div>'+
+        '<div id="loading-icon-in"></div>'+
+        '</div>'+
+        '<h4 style="margin-top: 194px">Loading</h4>'
+    );
+    $('#loading-icon-out').css({
+        'background-color': 'blue',
+        'position': 'fixed',
+    });
+    $('#loading-icon-mid').css({
+        'background-color': 'lightblue',
+        'position': 'fixed',
+    });
+    $('#loading-icon-in').css({
+        'background-color': 'white',
+        'position': 'fixed'
+    });
+
+    let t = 0;
+    let intervalId = setInterval(() => {
+        const timeDelayConstant = 60;
+        const cascadeDelayConstant = 100;
+        const fromTop = 300;
+        const widthHeight1 = 30+20*Math.sin(t/timeDelayConstant);
+        const widthHeight2 = 25+20*Math.sin((t-cascadeDelayConstant)/timeDelayConstant);
+        const widthHeight3 = 15+20*Math.sin((t)/timeDelayConstant);
+        $('#loading-icon-out').css({
+            'width': `${widthHeight1}px`,
+            'height': `${widthHeight1}px`,
+            'border-radius': `${(widthHeight1)/2}px`,
+            'left': `${($(window).width()-(widthHeight1))/2}px`,
+            'top': `${fromTop+(50-(widthHeight1))/2}px`
+        });
+        $('#loading-icon-mid').css({
+            'width': `${widthHeight2}px`,
+            'height': `${widthHeight2}px`,
+            'border-radius': `${(widthHeight2)/2}px`,
+            'left': `${($(window).width()-(widthHeight2))/2}px`,
+            'top': `${fromTop+(50-(widthHeight2))/2}px`
+        });
+        $('#loading-icon-in').css({
+            'width': `${widthHeight3}px`,
+            'height': `${widthHeight3}px`,
+            'border-radius': `${(widthHeight3)/2}px`,
+            'left': `${($(window).width()-(widthHeight3))/2}px`,
+            'top': `${fromTop+(50-(widthHeight3))/2}px`
+        });
+        t++;
+    }, 1);
+
     fetchMovies();
     populateGenreCheckboxes();
 
